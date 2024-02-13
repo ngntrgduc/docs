@@ -1,4 +1,6 @@
-## Git commit header
+## Git tips and tricks
+
+### Git commit header
 - **feat**: introduce a new feature
 - **fix**: patches a bug in your codebase (bugfix or hotfix)
 - **build**: changes that affect the build system or external dependencies
@@ -11,13 +13,13 @@
 - **test**: add/remove/update tests
 - **revert**: reverts one or many previous commits
 
-## Cache your login credentials in Git
+### Cache your login credentials in Git
 
 ```git
 git config --global credential helper store
 ```
 
-## Fix error with renamed repo on Github
+### Fix error with renamed repo on Github
 
 ```git
 git remote set-url origin [updated link url]
@@ -28,7 +30,7 @@ git remote rm origin
 git remote add origin [updated link url]
 ```
 
-## Fix git error: failed to push some refs to remote
+### Fix git error: failed to push some refs to remote
 
 ```git
 git pull --rebase origin main
@@ -39,4 +41,20 @@ git push origin main
 
 ```
 git clone --depth <depth> -b <branch> <repo_url>
+```
+
+
+## Git alias
+
+### Copt this to the `.gitconfig` file
+
+```git
+[alias]
+	p = push
+	cm = commit
+	br = branch
+	st = status
+	co = checkout
+	last = log -1 HEAD
+	lg = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate
 ```

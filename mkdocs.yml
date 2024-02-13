@@ -22,6 +22,9 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon-32x32.png
+
 extra:
   homepage: http://ngntrgduc.github.io/
   social:
@@ -31,8 +34,6 @@ extra:
       link: https://www.facebook.com/nguyenduc1511  
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ngntrgduc/
-    - icon: fontawesome/brands/mastodon 
-      link: https://fosstodon.org/@ngntrgduc    
 
 markdown_extensions:
   - pymdownx.highlight:
