@@ -1,5 +1,7 @@
 ## Git tips and tricks
 
+- https://github.com/git-tips/tips
+
 ### Git commit header
 - **feat**: introduce a new feature
 - **fix**: patches a bug in your codebase (bugfix or hotfix)
@@ -22,12 +24,12 @@ git config --global credential helper store
 ### Fix error with renamed repo on Github
 
 ```git
-git remote set-url origin [updated link url]
+git remote set-url origin <url>
 ```
 Or 
 ```git
 git remote rm origin
-git remote add origin [updated link url]
+git remote add origin <url>
 ```
 
 ### Fix git error: failed to push some refs to remote
@@ -46,7 +48,7 @@ git clone --depth <depth> -b <branch> <repo_url>
 
 ## Git alias
 
-### Copt this to the `.gitconfig` file
+Copy this to the `.gitconfig` file
 
 ```git
 [alias]
@@ -58,3 +60,18 @@ git clone --depth <depth> -b <branch> <repo_url>
 	last = log -1 HEAD
 	lg = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate
 ```
+
+## Some Git option
+
+```git
+git diff --word-diff
+```
+![](https://blog.gitbutler.com/content/images/size/w1000/2024/02/CleanShot-2024-02-08-at-08.19.28@2x.png)
+
+Apply commit from other branch to current branch
+
+```git
+git cherry-pick <commit>
+```
+
+Be sure to switch branch before cherry picking
