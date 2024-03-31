@@ -27,13 +27,6 @@ theme:
 
 extra:
   homepage: http://ngntrgduc.github.io/
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/ngntrgduc
-    - icon: fontawesome/brands/facebook
-      link: https://www.facebook.com/nguyenduc1511  
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/ngntrgduc/
 
 markdown_extensions:
   - pymdownx.highlight:
