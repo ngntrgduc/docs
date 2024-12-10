@@ -20,7 +20,11 @@ pip install click fire rich tqdm
 
 ### Web
 ```py
-pip install beautifulsoup4 selenium
+pip install beautifulsoup4 lxml
+```
+
+```py
+pip install selenium webdriver-manager
 ```
 
 ```py

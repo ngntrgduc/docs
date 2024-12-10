@@ -13,6 +13,17 @@
 - **test**: add/remove/update tests
 - **revert**: reverts one or many previous commits
 
+## Restore modified file
+```git
+git restore <file>
+```
+Though, this command is experimental 
+
+## Remove file from staging area
+```git
+git reset <file>
+```
+
 ## Cache your login credentials in Git
 
 ```git
@@ -90,4 +101,12 @@ git stash clear 	delete all stash
 ## Pull submodule
 ```git
 git submodule foreach git pull
+```
+
+## remove folder/directory from remote git repository
+
+```git
+git rm -r --cached <file/folder>
+git commit -m "Removed <file/folder> from repository"
+git push
 ```
