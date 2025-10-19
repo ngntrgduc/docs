@@ -120,6 +120,13 @@ git commit -m "Removed <file/folder> from repository"
 git push
 ```
 
+### Remove file from remote git repository
+```git
+git rm --cached <file>
+git commit -m "Stop tracking <file>"
+git push
+```
+
 ## Removing multiple files from a Git repo that have already been deleted from disk
 
 ```git
@@ -172,4 +179,24 @@ or in a PowerShell:
 git ls-files -v | Select-String -CaseSensitive '^h'
 ```
 
+But using `--assume-unchanged` still not enough when working with branches, so use `--skip-worktree` instead if you want to ignore local changes across branches
+```git
+git update-index --skip-worktree <file>
+```
+and check it:
+```git
+git ls-files -v | Select-String -CaseSensitive '^S'
+```
+
+Also, `--assume-unchanged` often used as a performance optimization: For large files that never actually change, this will skip checking these files.
+
+
 Source: https://stackoverflow.com/a/17195901/16461323
+
+But also note that in the official doc of `git update-index`:
+> Users often try to use the assume-unchanged and skip-worktree bits to tell Git to ignore changes to files that are tracked. This does not work as expected, since Git may still check working tree files against the index when performing certain operations. **In general, Git does not provide a way to ignore changes to tracked files, so alternate solutions are recommended.**
+> 
+> For example, if the file you want to change is some sort of config file, the repository can include a sample config file that can then be copied into the ignored name and modified. The repository can even include a script to treat the sample file as a template, modifying and copying it automatically.
+>
+> https://git-scm.com/docs/git-update-index#_notes
+
