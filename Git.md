@@ -153,6 +153,10 @@ git push --tags
 git checkout v1.0.0   	check out tag
 git tag -d v1.0			delete tag
 ```
+faster git push with annotated tags (avoid connect twice in a row with git push && git push --tags)
+```git
+git push --follow-tags
+```
 
 ## Rename a file:
 ```git
@@ -193,6 +197,10 @@ Also, `--assume-unchanged` often used as a performance optimization: For large f
 
 Source: https://stackoverflow.com/a/17195901/16461323
 
+Assume-unchanged flag could be lost on the pull operation and the local changes inside such files doesn’t seem to be important to git.
+
+Source: https://stackoverflow.com/questions/13630849/git-difference-between-assume-unchanged-and-skip-worktree
+
 But also note that in the official doc of `git update-index`:
 > Users often try to use the assume-unchanged and skip-worktree bits to tell Git to ignore changes to files that are tracked. This does not work as expected, since Git may still check working tree files against the index when performing certain operations. **In general, Git does not provide a way to ignore changes to tracked files, so alternate solutions are recommended.**
 > 
@@ -200,3 +208,23 @@ But also note that in the official doc of `git update-index`:
 >
 > https://git-scm.com/docs/git-update-index#_notes
 
+## Sparse checkout
+`git sparse-checkout`: using `--skip-worktree` for all files. This command used to restrict your working directory to a set of directories
+
+
+## Git switch
+Create new branch then switch to it, modern alternative to `git checkout -b <branch_name>`
+```git
+git switch -c <branch_name>
+```
+this equivalent of creating new branch then switch to it
+```git
+git branch <branch_name>
+git switch <branch_name>
+```
+
+## Git merge
+Git merge and create a merge commit, even if it can be fast-forward -> better branch graph visualization
+```
+git merge --no-ff <branch>
+```
